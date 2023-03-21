@@ -36,6 +36,7 @@ public class MapRouletteConfiguration implements Serializable
     private final String defaultProjectName;
     @Setter
     private int batchSize;
+    private String proxy;
 
     /**
      * Parses a map roulette configuration object from a string that follows one of these structures
@@ -110,6 +111,22 @@ public class MapRouletteConfiguration implements Serializable
         this.defaultProjectName = "";
         this.apiKey = apiKey;
         this.batchSize = DEFAULT_BATCH_SIZE;
+    }
+
+    public String getProxy()
+    {
+        return this.proxy;
+    }
+
+    public MapRouletteConfiguration withProxy(final String proxy)
+    {
+        this.proxy = proxy;
+        return this;
+    }
+
+    public boolean hasProxy()
+    {
+        return this.proxy != null && !this.proxy.isEmpty();
     }
 
     @Override

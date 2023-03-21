@@ -42,6 +42,10 @@ public class MapRouletteConnection implements IMapRouletteConnection
         this.uriBuilder = new URIBuilder().setScheme(this.configuration.getScheme())
                 .setHost(this.configuration.getServer()).setPort(this.configuration.getPort());
         this.resourceFactory = factory;
+        if (configuration.hasProxy())
+        {
+            this.resourceFactory.withProxy(configuration.getProxy());
+        }
         if (!this.isAbleToConnectToMapRoulette())
         {
             throw new IllegalArgumentException(
