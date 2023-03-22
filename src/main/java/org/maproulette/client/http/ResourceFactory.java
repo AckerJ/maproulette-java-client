@@ -11,8 +11,7 @@ import org.apache.http.client.methods.HttpPut;
 import org.maproulette.client.exception.MapRouletteRuntimeException;
 
 /**
- * Factory for retrieving resource based on method. Set system property 'org.maproulette.http_proxy'
- * to use an HTTP proxy for fetching resources.
+ * Factory for retrieving resource based on method
  *
  * @author mcuthbert
  */
